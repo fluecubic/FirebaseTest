@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getDoc, addDoc, doc, getFirestore, getDocs, getDocFromCache, DocumentSnapshot, collection  } from "firebase/firestore"
+import { initializeApp } from "firebase/app";//init
+import { getDoc, addDoc, doc, getFirestore, getDocs, getDocFromCache, DocumentSnapshot, collection, documentId  } from "firebase/firestore"//init befehle
 
 
 const firebaseConfig = {
@@ -18,7 +18,15 @@ const db = getFirestore(app);
 
 document.getElementById("go").addEventListener("click", () => {
   alert("send");
-  const docRef = addDoc(collection(db, "User"), {
+  const docRef = addDoc(collection(db, "User"), {//dokumenr adden schreiben
     Text:document.getElementById("input").value
   })
 })
+
+const docRef = doc(db, "User", "i87v72qq46Vdl9nhlumf"); //daten Formular
+const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
+
+   docSnap.data();//Variablen mit den daten
+
+  
+
