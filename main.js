@@ -28,9 +28,11 @@ document.getElementById("go").addEventListener("click", () => {
 })
 
 
-const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
-document.getElementById("input").value = docSnap.data().Text;//Variablen mit den daten
-console.log(docSnap.data())
+
+setInterval(async () => {
+  const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
+  document.getElementById("input").value = docSnap.data().Text;//Variablen mit den daten
+}, 60);
 
 //const AdddocRef = addDoc(collection(db, "User"), {//dokumenr adden schreiben
 //    Text:document.getElementById("input").value
