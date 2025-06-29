@@ -34,13 +34,9 @@ setInterval(async () => {
   document.getElementById("input").value = docSnap.data().Text;//Variablen mit den daten
 
   
-}, 10000);
+}, 60);
 
-setInterval(() => {
-  const rewritedoc =  updateDoc(docRef, {
-  Text: document.getElementById("input").value, Date: Timestamp.now()
-});
-}, 50);
+
 
 //const AdddocRef = addDoc(collection(db, "User"), {//dokumenr adden schreiben
 //    Text:document.getElementById("input").value
