@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";  
-import { getDoc, addDoc, doc, getFirestore, getDocs, getDocFromCache, DocumentSnapshot, collection, documentId, updateDoc, Timestamp  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";//init befehle
+import { getDoc, addDoc, doc, getFirestore, getDocs, getDocFromCache, DocumentSnapshot, collection, documentId, updateDoc, Timestamp, onSnapshot  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";//init befehle
 
 
 const firebaseConfig = {
@@ -29,12 +29,22 @@ document.getElementById("go").addEventListener("click", () => {
 
 
 
-setInterval(async () => {
+onSnapshot(docRef, async ()=> {
   const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
   document.getElementById("input").value = docSnap.data().Text;//Variablen mit den daten
-
+})
   
-}, 60);
+  
+
+
+document.getElementById("input").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+   const rewritedoc =  updateDoc(docRef, {
+  Text: document.getElementById("input").value, Date: Timestamp.now()
+});
+  }
+});
+
 
 
 
