@@ -32,7 +32,9 @@ document.getElementById("go").addEventListener("click", () => {
 setInterval(async () => {
   const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
   document.getElementById("input").value = docSnap.data().Text;//Variablen mit den daten
-}, 60);
+
+  
+}, 5000);
 
 //const AdddocRef = addDoc(collection(db, "User"), {//dokumenr adden schreiben
 //    Text:document.getElementById("input").value
