@@ -31,7 +31,7 @@ document.getElementById("go").addEventListener("click", () => {
 
 onSnapshot(docRef, async ()=> {
   const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
-  document.getElementById("input").value = docSnap.data().Text;//Variablen mit den daten
+  document.getElementById("output").value = docSnap.data().Text;//Variablen mit den daten
 })
   
   
