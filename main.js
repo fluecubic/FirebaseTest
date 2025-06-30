@@ -21,7 +21,7 @@ let inputz
 
 document.getElementById("go").addEventListener("click", () => {
   
-inputz = document.getElementById("output").innerHTML +"<hl>"+
+inputz = document.getElementById("output").innerHTML +"<br>"+
   document.getElementById("input").value;
   // Dokument aktualisieren
  const rewritedoc =  updateDoc(docRef, {
