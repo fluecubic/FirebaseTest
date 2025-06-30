@@ -20,8 +20,7 @@ const docRef = doc(db, "User", "i87v72qq46Vdl9nhlumf"); //daten Formular
 let inputz
 document.getElementById("go").addEventListener("click", () => {
   
-inputz = document.getElementById("output").value + 
-  "                                                                                                            "+
+inputz = document.getElementById("output") +"/n"+
   document.getElementById("input").value;
   // Dokument aktualisieren
  const rewritedoc =  updateDoc(docRef, {
