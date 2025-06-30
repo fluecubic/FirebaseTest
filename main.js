@@ -17,13 +17,13 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const docRef = doc(db, "User", "i87v72qq46Vdl9nhlumf"); //daten Formular
-
+let inputz
 document.getElementById("go").addEventListener("click", () => {
   
-
+inputz = document.getElementById("output").value + "<hr>" + document.getElementById("input").value;
   // Dokument aktualisieren
  const rewritedoc =  updateDoc(docRef, {
-  Text: document.getElementById("input").value, Date: Timestamp.now()
+  Text: inputz, Date: Timestamp.now()
 });
 })
 
