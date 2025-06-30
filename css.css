@@ -1,4 +1,7 @@
 #output
-{ }
+{font-family: Arial;
+margin-left: 50px; }
 
-#go{width:100px; height: 50px}
+#go{width:100px; height: 50px;}
+
+#input{margin-left: 100px;}
