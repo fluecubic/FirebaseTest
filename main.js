@@ -40,7 +40,7 @@ onSnapshot(docRef, async ()=> {
 document.getElementById("input").addEventListener("keydown", function(event) {
   if (event.key === "Enter") {
    const rewritedoc =  updateDoc(docRef, {
-  Text: document.getElemtById("output").value + "<hr>" + document.getElementById("input").value, Date: Timestamp.now()
+  Text: document.getElementById("input").value, Date: Timestamp.now()
 });
   }
 });
