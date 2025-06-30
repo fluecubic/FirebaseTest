@@ -18,6 +18,7 @@ const db = getFirestore(app);
 
 const docRef = doc(db, "User", "i87v72qq46Vdl9nhlumf"); //daten Formular
 let inputz
+
 document.getElementById("go").addEventListener("click", () => {
   
 inputz = document.getElementById("output").value +"<hr>"+
@@ -32,7 +33,7 @@ inputz = document.getElementById("output").value +"<hr>"+
 
 onSnapshot(docRef, async ()=> {
   const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
-  document.getElementById("output").value = docSnap.data().Text;//Variablen mit den daten
+  document.getElementById("output").innerHTML = docSnap.data().Text;//Variablen mit den daten
 })
   
   
