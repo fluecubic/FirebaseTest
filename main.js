@@ -23,7 +23,7 @@ document.getElementById("go").addEventListener("click", () => {
 
   // Dokument aktualisieren
  const rewritedoc =  updateDoc(docRef, {
-  Text: document.getElemtById("output").value + "<hr>" + document.getElementById("input").value, Date: Timestamp.now()
+  Text: document.getElementById("input").value, Date: Timestamp.now()
 });
 })
 
