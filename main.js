@@ -25,7 +25,7 @@ document.getElementById("entername").onclick = function () {
   document.getElementById("login").remove()
 }
 
-document.getElementById("go").addEventListener("click", () => {
+document.getElementById("go").addEventListener("click", async () => {
 const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
   
 inputz = docSnap.data().Text +" <br> "+
