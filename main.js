@@ -18,11 +18,17 @@ const db = getFirestore(app);
 
 const docRef = doc(db, "User", "i87v72qq46Vdl9nhlumf"); //daten Formular
 let inputz
+let Namen
+
+document.getElementById("entername").onclick = function () {
+  Namen = document.getElementById("name").value;
+  document.getElementById("login").remove()
+}
 
 document.getElementById("go").addEventListener("click", () => {
   
 inputz = document.getElementById("output").innerHTML +" <br> "+
-  document.getElementById("input").value;
+ Namen + ":" + document.getElementById("input").value;
   // Dokument aktualisieren
  const rewritedoc =  updateDoc(docRef, {
   Text: inputz, Date: Timestamp.now()
