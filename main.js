@@ -36,7 +36,8 @@ inputz = document.getElementById("output").innerHTML +" <br> "+
 document.getElementById("input").value = "";
 })
 
-
+const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
+  document.getElementById("output").innerHTML = docSnap.data().Text;//Variablen mit den daten
 
 onSnapshot(docRef, async ()=> {
   const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
