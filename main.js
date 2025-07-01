@@ -27,6 +27,7 @@ inputz = document.getElementById("output").innerHTML +" <br> "+
  const rewritedoc =  updateDoc(docRef, {
   Text: inputz, Date: Timestamp.now()
 });
+document.getElementById("input").value = "";
 })
 
 
