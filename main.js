@@ -17,8 +17,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const docRef = doc(db, "User", "i87v72qq46Vdl9nhlumf"); //daten Formular
-let inputz
-let Namen
+let inputz;
+let Namen;
 
 document.getElementById("entername").onclick = function () {
   Namen = document.getElementById("name").value;
