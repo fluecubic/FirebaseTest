@@ -27,8 +27,8 @@ document.getElementById("entername").onclick = function () {
 
 document.getElementById("go").addEventListener("click", async () => {
 const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
-  
-inputz = docSnap.data().Text +" <br> "+
+  docSnap.data().Text
+inputz =  document.getElementById("output").value +" <br> "+
  Namen + ":" + document.getElementById("input").value;
   
   // Dokument aktualisieren
