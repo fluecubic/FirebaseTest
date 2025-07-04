@@ -47,7 +47,7 @@ onSnapshot(docRef, async ()=> {
 
   document.addEventListener(visibilitychange, ()=> {
     if (document.visibilityState == "hidden") {
-      new Notification{"Neue Nachricht", body: "Los Antworte!"}
+      new Notification("Neue Nachricht", {body: "Los Antworte!"});
     }
   })
 })
