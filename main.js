@@ -19,12 +19,13 @@ const db = getFirestore(app);
 const docRef = doc(db, "User", "i87v72qq46Vdl9nhlumf"); //daten Formular
 let inputz;
 let Namen;
-Notification.requestPermission();
+
 
 
 document.getElementById("entername").onclick = function () {
   Namen = document.getElementById("name").value;
   document.getElementById("login").remove()
+  Notification.requestPermission()
 }
 
 document.getElementById("go").addEventListener("click", async () => {
@@ -47,6 +48,7 @@ onSnapshot(docRef, async ()=> {
 
   document.addEventListener(visibilitychange, ()=> {
     if (document.visibilityState == "hidden") {
+      
       new Notification("Neue Nachricht", {body: "Los Antworte!"});
     }
   })
