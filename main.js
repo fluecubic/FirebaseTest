@@ -19,6 +19,8 @@ const db = getFirestore(app);
 const docRef = doc(db, "User", "i87v72qq46Vdl9nhlumf"); //daten Formular
 let inputz;
 let Namen;
+Notification.requestPermission();
+
 
 document.getElementById("entername").onclick = function () {
   Namen = document.getElementById("name").value;
@@ -42,6 +44,12 @@ const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
 onSnapshot(docRef, async ()=> {
   const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
   document.getElementById("output").innerHTML = docSnap.data().Text;//Variablen mit den daten
+
+  document.addEventListener(visibilitychange, ()=> {
+    if (document.visibilityState == "hidden") {
+      new Notification{"Neue Nachricht", body: "Los Antworte!"}
+    }
+  })
 })
   
   
