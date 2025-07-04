@@ -8,7 +8,7 @@ const firebaseConfig = {
   projectId: "textchange-91bb5",
   storageBucket: "textchange-91bb5.firebasestorage.app",
   messagingSenderId: "287967549015", 
-  appId: "1:287967549015:web:983d315ece9f8c56f87512",
+  appId: "1:287967549015:web:983d315ece9f8c56f87512", 
   measurementId: "G-40FLEQSHH5"
 }; 
 
