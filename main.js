@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";  
-import { getDoc, addDoc, doc, getFirestore, getDocs, getDocFromCache, DocumentSnapshot, collection, documentId, updateDoc, Timestamp, onSnapshot  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";//init befehle
+import { getDoc, addDoc, doc, getFirestore, getDocs, getDocFromCache, DocumentSnapshot, collection, documentId, updateDoc, Timestamp, onSnapshot, query, orderBy, serverTimestamp  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";//init befehle
 
 
 const firebaseConfig = {
@@ -29,24 +29,35 @@ document.getElementById("entername").onclick = function () {
 }
 
 document.getElementById("go").addEventListener("click", async () => {
-inputz =  document.getElementById("output").innerHTML +" <br> "+
- Namen + ":" + document.getElementById("input").value;
   
   // Dokument aktualisieren
- const rewritedoc =  updateDoc(docRef, {
-  Text: inputz, Date: Timestamp.now()
-});
-document.getElementById("input").value = "";
+ const AdddocRef = addDoc(collection(db, "User"), {//dokumenr adden schreiben
+  Text:document.getElementById("input").value, Date: serverTimestamp(), User: Namen
 })
 
-const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
-  document.getElementById("output").innerHTML = docSnap.data().Text;//Variablen mit den daten
+document.getElementById("input").value = "";
+});
+
+
+
+async function getSortedDocuments() {
+  const colRef = collection(db, "User");
+
+  const q = query(colRef, orderBy("Date", "desc")); 
+
+  const querySnapshot = await getDocs(q);
+
+  querySnapshot.forEach((doc) => {
+    document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "<p class='message'>" +doc.data().User + ": " + doc.data().Text + "</p>";
+  });
+}
+
+getSortedDocuments();
 
 onSnapshot(docRef, async ()=> {
-  const docSnap = await getDoc(docRef); //Befehl um Daten zu lesen
-  document.getElementById("output").innerHTML = docSnap.data().Text;//Variablen mit den daten
+  getSortedDocuments();
 
-  document.addEventListener(visibilitychange, ()=> {
+  document.addEventListener(document.visibilitychange, ()=> {
     if (document.visibilityState == "hidden") {
       
       new Notification("Neue Nachricht", {body: "Los Antworte!"});
@@ -59,18 +70,13 @@ onSnapshot(docRef, async ()=> {
 
 document.getElementById("input").addEventListener("keydown", function(event) {
   if (event.key === "Enter") {
-   const rewritedoc =  updateDoc(docRef, {
-  Text: document.getElementById("input").value, Date: Timestamp.now()
-});
+   
   }
 });
 
 
 
 
-//const AdddocRef = addDoc(collection(db, "User"), {//dokumenr adden schreiben
-//    Text:document.getElementById("input").value
-//  })
 
 
   

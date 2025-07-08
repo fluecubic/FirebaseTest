@@ -1,5 +1,5 @@
 #output
-{font-family: Arial;
+{
 margin-left: 50px;}
 
 button{width:100px; height: 50px;}
@@ -10,3 +10,11 @@ button{width:100px; height: 50px;}
 
 h1{font-family: Arial;
 font-size: large;}
+
+.messages{
+    font-family: Arial;
+    background-color: rgb(49, 118, 245);
+    border-radius: 20px;
+    height: 20px;
+    width:fit-content;
+}
