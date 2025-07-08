@@ -38,13 +38,11 @@ document.getElementById("go").addEventListener("click", async () => {
 document.getElementById("input").value = "";
 });
 
+const colRef = collection(db, "User");
+const q = query(colRef, orderBy("Date", "asc")); 
 
 
 async function getSortedDocuments() {
-  const colRef = collection(db, "User");
-
-  const q = query(colRef, orderBy("Date", "asc")); 
-
   const querySnapshot = await getDocs(q);
   document.getElementById("output").innerHTML = ""
   querySnapshot.forEach((doc) => {
