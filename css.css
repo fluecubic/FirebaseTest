@@ -14,7 +14,7 @@ font-size: large;}
 .message{
     font-family: Arial;
     background-color: rgb(49, 118, 245);
-    border-radius: 20px;
-    height: 40px;
-    width:fit-content;
+    border-radius: 5px;
+    height: 25px;
+    width:fit-content + 10px;
 }
