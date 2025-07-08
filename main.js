@@ -54,7 +54,7 @@ async function getSortedDocuments() {
 
 getSortedDocuments();
 
-onSnapshot(q, (querySnapshot) , async ()=> {
+onSnapshot(q, (querySnapshot) => {
   getSortedDocuments();
 
   document.addEventListener(document.visibilitychange, ()=> {
