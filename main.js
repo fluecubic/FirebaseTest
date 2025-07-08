@@ -43,10 +43,10 @@ document.getElementById("input").value = "";
 async function getSortedDocuments() {
   const colRef = collection(db, "User");
 
-  const q = query(colRef, orderBy("Date", "desc")); 
+  const q = query(colRef, orderBy("Date", "asc")); 
 
   const querySnapshot = await getDocs(q);
-
+  document.getElementById("output").innerHTML = ""
   querySnapshot.forEach((doc) => {
     document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "<p class='message'>" +doc.data().User + ": " + doc.data().Text + "</p>";
   });
@@ -54,7 +54,7 @@ async function getSortedDocuments() {
 
 getSortedDocuments();
 
-onSnapshot(docRef, async ()=> {
+onSnapshot(q, (querySnapshot) async ()=> {
   getSortedDocuments();
 
   document.addEventListener(document.visibilitychange, ()=> {
