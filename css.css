@@ -17,5 +17,16 @@ font-size: large;}
     border-radius: 5px;
     height: 25px;
     width:fit-content;
-    padding: 5px
+    padding: 5px;
 }
+
+.yourmessage{
+    font-family: Arial;
+    background-color: rgb(49, 118, 245);
+    border-radius: 5px;
+    height: 25px;
+    width:fit-content;
+    padding: 5px;
+    margin-left: 200px;
+}
+
