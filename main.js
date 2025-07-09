@@ -20,6 +20,20 @@ const docRef = doc(db, "User", "i87v72qq46Vdl9nhlumf"); //daten Formular
 let inputz;
 let Namen = "";
 
+async function getSortedDocuments() {
+  
+  const querySnapshot = await getDocs(q);
+  document.getElementById("output").innerHTML = ""
+  
+  querySnapshot.forEach((doc) => {
+    if (doc.data().User === Namen) { 
+      document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "<p class='yourmessage'>" + doc.data().Text + "</p>";
+    }
+   else {
+    document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "<p class='message'>" +doc.data().User + ": " + doc.data().Text + "</p>";
+    }
+  });
+}
 
 
 document.getElementById("entername").onclick = function () {
@@ -43,20 +57,6 @@ const colRef = collection(db, "User");
 const q = query(colRef, orderBy("Date", "asc")); 
 
 
-async function getSortedDocuments() {
-  
-  const querySnapshot = await getDocs(q);
-  document.getElementById("output").innerHTML = ""
-  
-  querySnapshot.forEach((doc) => {
-    if (doc.data().User === Namen) { 
-      document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "<p class='yourmessage'>" + doc.data().Text + "</p>";
-    }
-   else {
-    document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "<p class='message'>" +doc.data().User + ": " + doc.data().Text + "</p>";
-    }
-  });
-}
 
 getSortedDocuments();
 
