@@ -14,7 +14,7 @@ font-size: large;}
 .message{
     font-family: Arial;
     background-color: rgb(49, 118, 245);
-    border-radius: 10px;
+    border-radius: 20px;
     width:fit-content;
     padding: 10px;
 }
@@ -22,7 +22,7 @@ font-size: large;}
 .yourmessage{
     font-family: Arial;
     background-color: rgb(163, 211, 255);
-    border-radius: 10px;
+    border-radius: 20px;
     width:fit-content;
     padding: 10px;
     margin-left: 350px;
