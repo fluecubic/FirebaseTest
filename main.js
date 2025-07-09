@@ -50,7 +50,7 @@ async function getSortedDocuments() {
   querySnapshot.forEach((doc) => {
     if (doc.data().User === Namen) { 
       document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "<p class='yourmessage'>" + doc.data().Text + "</p>";
-    };
+    }
    else {
     document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "<p class='message'>" +doc.data().User + ": " + doc.data().Text + "</p>";
     }
@@ -62,7 +62,7 @@ getSortedDocuments();
 onSnapshot(q, (querySnapshot) => {
   getSortedDocuments();
 
-  document.addEventListener(document.visibilitychange, ()=> {
+  document.addEventListener("visibilitychange" , ()=> {
     if (document.visibilityState == "hidden") {
       
       new Notification("Neue Nachricht", {body: "Los Antworte!"});
