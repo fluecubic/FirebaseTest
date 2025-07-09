@@ -14,19 +14,17 @@ font-size: large;}
 .message{
     font-family: Arial;
     background-color: rgb(49, 118, 245);
-    border-radius: 5px;
-    height: 25px;
+    border-radius: 10px;
     width:fit-content;
-    padding: 5px;
+    padding: 10px;
 }
 
 .yourmessage{
     font-family: Arial;
-    background-color: rgb(49, 118, 245);
-    border-radius: 5px;
-    height: 25px;
+    background-color: rgb(49, 20, 245);
+    border-radius: 10px;
     width:fit-content;
-    padding: 5px;
-    margin-left: 200px;
+    padding: 10px;
+    margin-left: 350px;
 }
 
