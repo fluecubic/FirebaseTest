@@ -24,8 +24,8 @@ let Namen = "";
 
 document.getElementById("entername").onclick = function () {
   Namen = document.getElementById("name").value;
-  document.getElementById("login").remove()
-  Notification.requestPermission()
+  document.getElementById("login").remove();
+  Notification.requestPermission();
   getSortedDocuments();
 }
 
