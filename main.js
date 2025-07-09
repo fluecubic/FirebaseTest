@@ -48,12 +48,12 @@ async function getSortedDocuments() {
   document.getElementById("output").innerHTML = ""
   
   querySnapshot.forEach((doc) => {
-    if (doc.data().User === Namen) { 
-      document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "<p class='yourmessage'>" + doc.data().Text + "</p>";
-    };
-    else {
+    //if (doc.data().User === Namen) { 
+      //document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "<p class='yourmessage'>" + doc.data().Text + "</p>";
+    //};
+   // else {
     document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "<p class='message'>" +doc.data().User + ": " + doc.data().Text + "</p>";
-    }
+    //}
   });
 }
 
