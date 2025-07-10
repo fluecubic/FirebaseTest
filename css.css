@@ -2,9 +2,11 @@
 {
 margin-left: 50px;}
 
-button{width:100px; height: 50px;}
+button{width:100px; height: 50px;
+ }
 
-#input{margin-left: 100px; }
+#input{margin-left: 100px;
+  }
 
 #login{width:100%; height: 100%; position:fixed;background-color:white;}
 

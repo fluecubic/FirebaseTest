@@ -71,13 +71,18 @@ getSortedDocuments();
 onSnapshot(q, (querySnapshot) => {
   getSortedDocuments();
 
- 
+  document.getElementById("input").scrollIntoView({behavior: "smooth"});
+
     if (document.visibilityState == "hidden") {
       new Notification("Neue Nachricht", {body: "Los Antworte!"});
     }
   
 })
   
+setTimeout(() => {
+  document.getElementById("input").scrollIntoView({behavior: "smooth"})
+}, 200);
+
   
 
 
