@@ -40,7 +40,8 @@ document.getElementById("entername").onclick = function () {
   Namen = document.getElementById("name").value;
   document.getElementById("login").remove();
   Notification.requestPermission();
-  getSortedDocuments();
+  setTimeout(getSortedDocuments(), 300)
+  
 }
 
 document.getElementById("go").addEventListener("click", async () => {
