@@ -19,6 +19,9 @@ const db = getFirestore(app);
 const docRef = doc(db, "User", "i87v72qq46Vdl9nhlumf"); //daten Formular
 let inputz;
 let Namen = "";
+const colRef = collection(db, "User");
+const q = query(colRef, orderBy("Date", "asc")); 
+
 
 async function getSortedDocuments() {
   
@@ -35,10 +38,10 @@ async function getSortedDocuments() {
   });
 }
 
-if (document.cookie === null)
+if (document.cookie === "")
 {} else { document.getElementById("login").remove();
          Namen = document.cookie;
-         setTimeout(getSortedDocuments(), 300);}
+         setTimeout(getSortedDocuments, 300);}
          
 
 document.getElementById("entername").onclick = function () {
@@ -46,7 +49,7 @@ document.getElementById("entername").onclick = function () {
   document.getElementById("login").remove();
   document.cookie = Namen;
   Notification.requestPermission();
-  setTimeout(getSortedDocuments(), 300)
+  setTimeout(getSortedDocuments, 300)
   
 }
 
@@ -59,9 +62,6 @@ document.getElementById("go").addEventListener("click", async () => {
 
 document.getElementById("input").value = "";
 });
-
-const colRef = collection(db, "User");
-const q = query(colRef, orderBy("Date", "asc")); 
 
 
 
