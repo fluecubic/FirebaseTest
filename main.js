@@ -35,10 +35,16 @@ async function getSortedDocuments() {
   });
 }
 
+if (document.cookie === null)
+{} else { document.getElementById("login").remove();
+         Namen = document.cookie;
+         setTimeout(getSortedDocuments(), 300);}
+         
 
 document.getElementById("entername").onclick = function () {
   Namen = document.getElementById("name").value;
   document.getElementById("login").remove();
+  document.cookie = Namen;
   Notification.requestPermission();
   setTimeout(getSortedDocuments(), 300)
   
@@ -66,8 +72,9 @@ onSnapshot(q, (querySnapshot) => {
 
   document.addEventListener("visibilitychange" , ()=> {
     if (document.visibilityState == "hidden") {
-      
+      onSnapshot(q, (querySnapshot) => {
       new Notification("Neue Nachricht", {body: "Los Antworte!"});
+      }
     }
   })
 })
