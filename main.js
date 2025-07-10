@@ -39,12 +39,7 @@ async function getSortedDocuments() {
 }
 
 if (document.cookie === "")
-{} else { document.getElementById("login").remove();
-         Namen = document.cookie;
-         setTimeout(getSortedDocuments, 300);}
-         
-
-document.getElementById("entername").onclick = function () {
+{document.getElementById("entername").onclick = function () {
   Namen = document.getElementById("name").value;
   document.getElementById("login").remove();
   document.cookie = Namen;
@@ -52,6 +47,12 @@ document.getElementById("entername").onclick = function () {
   setTimeout(getSortedDocuments, 300)
   
 }
+} else { document.getElementById("login").remove();
+         Namen = document.cookie;
+         setTimeout(getSortedDocuments, 300)}
+         
+
+
 
 document.getElementById("go").addEventListener("click", async () => {
   
