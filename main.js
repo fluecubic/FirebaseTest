@@ -48,7 +48,7 @@ if (document.cookie === "")
   
 }
 } else { document.getElementById("login").remove();
-         Namen = document.cookie;
+         Namen = String(document.cookie);
          setTimeout(getSortedDocuments, 300)}
          
 
