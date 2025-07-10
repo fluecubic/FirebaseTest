@@ -71,13 +71,11 @@ getSortedDocuments();
 onSnapshot(q, (querySnapshot) => {
   getSortedDocuments();
 
-  document.addEventListener("visibilitychange" , ()=> {
+ 
     if (document.visibilityState == "hidden") {
-      onSnapshot(q, (querySnapshot) => {
       new Notification("Neue Nachricht", {body: "Los Antworte!"});
-      })
     }
-  })
+  
 })
   
   
