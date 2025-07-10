@@ -82,11 +82,7 @@ onSnapshot(q, (querySnapshot) => {
   
 
 
-document.getElementById("input").addEventListener("keydown", function(event) {
-  if (event.key === "Enter") {
-   
-  }
-});
+
 
 
 
