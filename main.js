@@ -17,10 +17,11 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const docRef = doc(db, "User", "i87v72qq46Vdl9nhlumf"); //daten Formular
-let inputz;
 let Namen = "";
 const colRef = collection(db, "User");
 const q = query(colRef, orderBy("Date", "asc")); 
+let LastM
+let LastU
 
 
 async function getSortedDocuments() {
@@ -35,6 +36,10 @@ async function getSortedDocuments() {
    else {
     document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "<p class='message'>" +doc.data().User + ": " + doc.data().Text + "</p>";
     }
+    
+    LastU = doc.data().User;
+    LastM = doc.data().Text;
+
   });
 }
 
@@ -74,7 +79,10 @@ onSnapshot(q, (querySnapshot) => {
   document.getElementById("input").scrollIntoView({behavior: "smooth"});
 
     if (document.visibilityState == "hidden") {
-      new Notification("Neue Nachricht", {body: "Los Antworte!"});
+      setTimeout(() => {
+        new Notification("Neue Nachricht von " + LastU , {body: LastM});
+      }, 100);
+      
     }
   
 })
@@ -83,6 +91,9 @@ setTimeout(() => {
   document.getElementById("input").scrollIntoView({behavior: "smooth"})
 }, 200);
 
+if (document.getElementById("img").value == true) {
+  
+}
   
 
 
