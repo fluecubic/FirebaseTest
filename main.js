@@ -61,11 +61,22 @@ if (document.cookie === "")
 
 document.getElementById("go").addEventListener("click", async () => {
   
-  // Dokument aktualisieren
- const AdddocRef = addDoc(collection(db, "User"), {//dokumenr adden schreiben
-  Text:document.getElementById("input").value, Date: serverTimestamp(), User: Namen
-})
+  if (document.getElementById("img").checked === true) {
 
+    const AdddocRef = addDoc(collection(db, "User"), {//dokumenr adden schreiben
+  Text: "<img src='" + document.getElementById("input").value + "' >",
+    Date: serverTimestamp(),
+    User: Namen})
+  } else {
+
+    const AdddocRef = addDoc(collection(db, "User"), {//dokumenr adden schreiben
+  Text:document.getElementById("input").value, 
+  Date: serverTimestamp(),
+   User: Namen})
+
+  }
+ 
+ 
 document.getElementById("input").value = "";
 });
 
@@ -90,11 +101,6 @@ onSnapshot(q, (querySnapshot) => {
 setTimeout(() => {
   document.getElementById("input").scrollIntoView({behavior: "smooth"})
 }, 200);
-
-if (document.getElementById("img").value == true) {
-  
-}
-  
 
 
 
